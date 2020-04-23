@@ -6,5 +6,8 @@
         <file>icons/person.png</file>
         <file>ContactList.qml</file>
         <file>MainToolBar.qml</file>
+        <file>TopRawLayout.qml</file>
+        <file>icons/dad.png</file>
+        <file>icons/unknown.png</file>
     </qresource>
 </RCC>

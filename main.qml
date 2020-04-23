@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.12
 
 Window {
     visible: true
+    color: "#363030"
     width: 320
     height: 400
     title: qsTr("Контакты")
@@ -12,20 +13,28 @@ Window {
         id:contactsModel
         ListElement{
             name:"Персик"
+            picture: "icons/person.png"
+            beeing: "Was online 2 months ago"
         }
         ListElement{
-            name:"Барсик"
+            name:"Дедушка"
+            picture: "icons/dad.png"
         }
         ListElement{
-            name:"Густав"
+            name: "Доставка пиццы"
         }
     }
     ColumnLayout{
         anchors.fill: parent
+        TopRawLayout{
+            Layout.fillWidth: true
+        }
         MainToolBar{
+            Layout.leftMargin: 10
+            Layout.rightMargin: 10
             Layout.fillWidth: true
             onNewItem: {
-                contactsModel.append({name:name})
+                contactsModel.append({name:text})
             }
         }
         ContactList{

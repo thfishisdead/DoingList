@@ -9,6 +9,8 @@ ListView{
     ScrollBar.vertical: ScrollBar{}
     delegate: ContactItem{
         text: name
+        icon: picture
+        being: beeing
         selected: list.currentIndex === index
         onLeftClick: {
             list.currentIndex = index

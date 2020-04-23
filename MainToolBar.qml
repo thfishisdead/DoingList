@@ -11,6 +11,7 @@ RowLayout{
         id:textField
         Layout.fillWidth: true
         selectByMouse: true
+        placeholderText: "Добавить пользователя"
     }
 
     function add()
@@ -24,5 +25,11 @@ RowLayout{
         onClicked: {
             add();
         }
+    }
+    Keys.onReturnPressed: {
+        add();
+    }
+    Keys.onEnterPressed: {
+        add();
     }
 }

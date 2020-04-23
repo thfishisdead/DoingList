@@ -6,6 +6,7 @@ Rectangle {
     id:me
     property alias icon: icon.source
     property alias text: label.text
+    property alias being: label1.text
     property bool selected: false
     signal leftClick()
     signal rightClick()
@@ -20,20 +21,25 @@ Rectangle {
     height: 60
     RowLayout{
         anchors.fill: parent
-        spacing: 7
+        spacing: 0
         anchors.leftMargin: 4
         anchors.rightMargin: 4
         Image {
             id:icon
-            source: "icons/person.png"
+            source: "icons/unknown.png"
             Layout.fillHeight: true
             Layout.preferredWidth: height
-            Layout.margins: 7
+            Layout.margins: 4
         }
-        Label{
-            id:label
-            Layout.fillWidth: true
-            font.bold:true
+        ColumnLayout{
+            Label{
+                id:label
+                font.bold:true
+            }
+            Label{
+                id:label1
+                text:"Was online 5 minutes ago"
+            }
         }
     }
     MouseArea{
