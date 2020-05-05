@@ -4,6 +4,7 @@ import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 
 ColumnLayout{
+    signal searchItem(string text)
     Label{
         Layout.leftMargin: 130
         Layout.topMargin: 10
@@ -18,5 +19,12 @@ ColumnLayout{
         Layout.fillWidth: true
         placeholderText: "Search"
     }
+    function search() {
+        searchItem(TextField.text);
+        TextField.clear();
+    }
 
+    Keys.onEnterPressed: {
+        search();
+    }
 }

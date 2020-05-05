@@ -28,6 +28,8 @@ Window {
         anchors.fill: parent
         TopRawLayout{
             Layout.fillWidth: true
+            onSearchItem: {
+            }
         }
         MainToolBar{
             Layout.leftMargin: 10
@@ -38,9 +40,23 @@ Window {
             }
         }
         ContactList{
+            id:list
             Layout.fillHeight: true
             Layout.fillWidth: true
             model:contactsModel
+            onMenu: {
+                contactListMenu.popup();
+            }
+        }
+    }
+    Menu{
+        id:contactListMenu
+        modal:true
+        MenuItem{
+            text:"Удалить"
+            onTriggered: {
+                contactsModel.remove(list.menuIndex)
+            }
         }
     }
 }

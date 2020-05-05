@@ -21,7 +21,7 @@ Rectangle {
     height: 60
     RowLayout{
         anchors.fill: parent
-        spacing: 0
+        spacing: 7
         anchors.leftMargin: 4
         anchors.rightMargin: 4
         Image {
@@ -32,11 +32,16 @@ Rectangle {
             Layout.margins: 4
         }
         ColumnLayout{
+            Layout.fillWidth: true
+            spacing: 5
             Label{
+                Layout.fillWidth: true
                 id:label
                 font.bold:true
             }
             Label{
+                Layout.bottomMargin: 20
+                Layout.fillWidth: true
                 id:label1
                 text:"Was online 5 minutes ago"
             }

@@ -12,6 +12,7 @@ RowLayout{
         Layout.fillWidth: true
         selectByMouse: true
         placeholderText: "Добавить пользователя"
+        focus: true
     }
 
     function add()
@@ -22,6 +23,7 @@ RowLayout{
 
     Button{
         text: "Добавить"
+        highlighted: true
         onClicked: {
             add();
         }
